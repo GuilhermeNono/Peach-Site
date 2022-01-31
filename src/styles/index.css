@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@300&display=swap');
+
+/* Zerando o CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    font-size: 62.5%;
+    font-family: 'Lato', sans-serif;
+    color: black;
+}
+
+body {
+    /* background: linear-gradient(rgba(37, 39, 44, 0.8), rgb(29, 30, 34)); */
+    background: linear-gradient(40deg, #ce3e05b7 10%, rgb(29, 30, 34) 90%);
+    /* background-color: rgb(29, 30, 34); */
+    background-repeat: no-repeat;
+}
+
+header {
+    width: 100%;
+    height: 9vh;
+    /* background: rgba(37, 39, 44, 0.1); */
+    background: rgb(29, 30, 34);
+}
+
+.menu-content {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    padding: 0px 175px;
+}
+
+.logo {
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: rgb(248, 148, 17);
+}
+
+.menu-content .menu-items {
+    display: flex;
+    list-style: none;
+    gap: 100px;
+}
+
+.menu-items-login li{
+    list-style: none;
+}
+
+.menu-items-login button {
+    transition: all ease 0.5s;
+}
+
+.menu-items-login button:hover {
+    background-color: rgb(248, 165, 55);
+}
+
+.menu-content .menu-items a {
+    text-decoration: none;
+    color: rgb(237, 240, 241);
+    transition: all ease 0.5s;
+}
+
+.menu-content .menu-items a:hover {
+    color: rgb(206, 123, 15);
+}
+
+.fa-home,
+.fa-file-alt,
+.fa-globe {
+    padding-right: 8px;
+}
+
+.menu-items-login a {
+    text-decoration: none;
+}
+
+.menu-items-login button{
+    background-color: rgba(248, 148, 17,1);
+    border: none;
+    color: rgb(237, 240, 241);
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 5px 25px;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+main{
+    height: 91vh;
+    width: 100%;
+    display: flex;
+    margin: 0px;
+    padding: 0vh 0vw;
+    justify-content: flex-end;
+    align-items: center;
+    background: linear-gradient(to top, #ce3e05b7 5%, rgb(29, 30, 34) 95%), url(/assets/Daisy.png)
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5rem;
+}
+
+.main-text h1{
+    font-weight: 300;
+    text-transform: uppercase;
+    color: white;
+}
+
+h1.main-text-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 4rem;
+    font-weight: bolder;
+    padding-bottom: 0.7rem;
+    letter-spacing: 0.2rem;
+    color: antiquewhite;
+}
+
+h2.main-text-sub{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    color: rgb(199, 187, 172);
+}
+
+.btns {
+   display: flex;
+   justify-content: center;
+   margin-top: 15px;
+   gap: 20px;
+}
+
+.btns button{
+    width: 75px;
+    height: 40px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+}
+
+.btns button.btn-invite {
+    font-weight: bold;
+    background-color: rgb(114,137,218);
+    transition: all ease 0.2s;
+}
+
+.btns button.btn-docs{
+    width: 110px;
+    font-weight: 400;
+    color: black;
+    background-color: antiquewhite;
+}
+
+.btns button.btn-invite:hover {
+    background-color: rgb(146, 160, 216);
+}
+
+footer{
+    background-color: rgb(29, 30, 34) ;
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content p {
+    font-size: 1.8rem;
+    color: antiquewhite;
+}
+/* Preloader Page */
+
+.preloader{
+    background-color: rgb(29, 30, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100vh;
+    z-index: 99;
+    width: 100%;
+}
+
+.preloader img {
+    height: 20vh;
+    animation: rotate 3s linear infinite
+}
+
+.preloader.hidden{
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut{
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes rotate {
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+
+/* .main-img {
+    flex: 1;
+} */
