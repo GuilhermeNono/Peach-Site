@@ -222,6 +222,9 @@ footer{
     }
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
 
 /* .main-img {
     flex: 1;
