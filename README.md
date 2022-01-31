@@ -1,6 +1,6 @@
 # Website DiscordBot
 ## 📖 Descrição 
-<p>Site que será usado como objeto de estudo. O website contará com a Homepage, serviço de login e outras informações referente ao bot.</p>
+<p>Site que está sendo utilizado como objeto de estudo. O website contará com a Homepage, serviço de login e outras informações referente ao bot.</p>
 
 ### ✪ Objetivos primarios
 
