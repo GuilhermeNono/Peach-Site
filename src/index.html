@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="styles/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/6c22e98afe.js" crossorigin="anonymous"></script>
     <title>pageBot</title>
 </head>
@@ -19,22 +20,24 @@
     <header>
         <div class="menu-content">
             <h1 class="logo">Peach</h1>
-            <div class="menu-toggle">
-                <div class="one"></div>
-                <div class="two"></div>
-                <div class="three"></div>
-                <div class="four"></div>
+            <div class="menu-section">
+                <div class="menu-toggle">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                </div>
+                <nav class="header-menu">
+                    <ul class="menu-items">
+                        <li><a href="#"><i class="fas fa-home"></i>Invite</a></li>
+                        <li><a href="#"><i class="fas fa-file-alt"></i>Docs</a></li>
+                        <li><a href="#"><i class="fas fa-globe"></i>About</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="header-menu">
-                <ul class="menu-items">
-                    <li><a href="#"><i class="fas fa-home"></i>Invite</a></li>
-                    <li><a href="#"><i class="fas fa-file-alt"></i>Docs</a></li>
-                    <li><a href="#"><i class="fas fa-globe"></i>About</a></li>
-                </ul>
-            </nav>
             <ul class="menu-items-login">
                 <li><a href="#"><button>Login</button></a></li>
             </ul>
+
         </div>
     </header>
 
@@ -58,7 +61,8 @@
         </div>
     </footer>
 
-    <script src="/scripts/preloader.js"></script>
+    <script src="scripts/preloader.js"></script>
+    <script src="scripts/mobileMenu.js"></script>
 </body>
 
 </html>
