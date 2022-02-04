@@ -12,6 +12,7 @@ html {
     font-size: 62.5%;
     font-family: 'Lato', sans-serif;
     color: black;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -39,6 +40,9 @@ header {
 }
 
 .logo {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
     letter-spacing: 0.2rem;
     cursor: pointer;
     text-transform: uppercase;
@@ -95,32 +99,34 @@ header {
 }
 
 main {
-    height: 91vh;
-    width: 100%;
-    display: flex;
-    margin: 0px;
-    padding: 0vh 0vw;
-    justify-content: flex-end;
-    align-items: center;
-    background: linear-gradient(to top, #ce3e05b7 5%, rgb(29, 30, 34) 95%), url(../../assets/Daisy.png);
-    background-repeat: no-repeat;
-}
-
-.main-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5rem;
 }
 
-.main-text h1 {
+.main-content {
+    height: 91vh;
+    width: 100%;
+    padding: 0vh 0vw;
+    justify-content: center;
+    background: linear-gradient(to top, #ce3e05b7 5%, rgb(29, 30, 34) 95%), url(../../assets/Daisy.png);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* margin: 5rem; */
+}
+
+.main-content_text {
+    margin: auto 5rem;
+}
+
+.main-content_text h1 {
     font-weight: 300;
-    text-transform: uppercase;
+    text-align: center;
+    /* text-transform: uppercase; */
     color: white;
-}
-
-h1.main-text-title {
     font-family: 'Roboto', sans-serif;
     font-size: 4rem;
     font-weight: bolder;
@@ -129,21 +135,24 @@ h1.main-text-title {
     color: antiquewhite;
 }
 
-h2.main-text-sub {
+.main-content_text h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 1.8rem;
+    text-align: center;
     color: rgb(199, 187, 172);
 }
 
 .btns {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
     margin-top: 15px;
     gap: 20px;
 }
 
 .btns button {
     width: 75px;
+    font-size: 1.6rem;
     height: 40px;
     cursor: pointer;
     border: 1px solid transparent;
@@ -159,7 +168,7 @@ h2.main-text-sub {
 }
 
 .btns button.btn-docs {
-    width: 11.0rem;
+    width: 13.0rem;
     font-weight: 400;
     color: black;
     background-color: antiquewhite;
@@ -169,11 +178,94 @@ h2.main-text-sub {
     background-color: rgb(146, 160, 216);
 }
 
+.main-content-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(29, 30, 34);
+}
+
+.main-content-about_components{
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background-color: rgb(38, 39, 44);
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 80%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-content-about_components .logo-shake {  
+    margin-top: 30px;  
+    margin-bottom: 30px;
+    width: auto;
+    height: 20vh;
+    animation: shake 3s linear infinite;
+}
+
+.main-content-about_components_info {
+    border: 1px solid transparent;
+    background: rgb(39, 40, 46);
+    border-width: 1px;
+    border-radius: 20px;
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.main-content-about_components_info p {
+    font-size: 2rem;
+}
+
+
+.info1 {
+    margin: 35px;
+}
+
+@keyframes shake {
+    0%{
+        transform: translateY(-5px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
+}
+
+.info{
+    font-size: 1.6rem;
+    margin-left: 35px;
+}
+
+div.card {
+    width: 28rem;
+    border-radius: 15px;
+    background: rgb(199, 119, 15);
+}
+
+img.card-img-top{
+    border-radius: 15px;
+}
+p.card-text{
+    font-size: 1.6rem;
+    color: antiquewhite;
+}
+
 footer {
     background-color: rgb(29, 30, 34);
     display: flex;
     justify-content: center;
     height: 5vh;
+    border: 1px solid rgb(16, 16, 19);
 }
 
 .footer-content {
@@ -187,6 +279,15 @@ footer {
     color: antiquewhite;
 }
 
+.footer-content a {
+    text-decoration: none;
+    color: antiquewhite;
+    transition: all ease 0.5s;
+}
+
+.footer-content a:hover {
+    color: rgb(206, 123, 15);
+}
 /* Preloader Page */
 
 .preloader {
@@ -283,6 +384,10 @@ footer {
 /* 768p */
 @media (max-width: 768px) {
 
+    .main-content {
+        background: linear-gradient(to top, #ce3e05b7 5%, rgb(29, 30, 34) 95%)
+    }
+
     nav,
     .menu-items-login {
         display: none;
@@ -358,12 +463,7 @@ footer {
 
 /* 425p */
 @media (max-width: 425px) {
-
-    main {
-        background: linear-gradient(to top, #ce3e05b7 5%, rgb(29, 30, 34) 95%)
-    }
-
-    h1.main-text-title{
+    h1.main-text-title {
         text-align: center;
     }
 
@@ -372,13 +472,20 @@ footer {
         text-align: left;
     }
 
-}
-
-@media (max-width: 425px) {
     h2.main-text-sub {
         text-align: center;
     }
+
     .main-content {
         margin: auto;
+    }
+
+    .logo {
+        font-size: 3.6rem;
+    }
+
+    .menu-toggle {
+        width: 30px;
+        height: 30px;
     }
 }
