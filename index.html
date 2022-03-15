@@ -6,9 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="src/styles/index.css">
     <link rel="stylesheet" href="/src/styles/bootstrap.min.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/6c22e98afe.js" crossorigin="anonymous"></script>
-    <title>pageBot</title>
+    <script src="src/scripts/preloader.js"></script>
+    <script src="src/scripts/mobileMenu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+    <script src="/src/scripts/bootstrap.min.js"></script>
+    <title>Peach - Home</title>
 </head>
 
 <body>
@@ -29,7 +36,9 @@
                 </div>
                 <nav class="header-menu">
                     <ul class="menu-items">
-                        <li><a href="#"><i class="fas fa-home"></i>Invite</a></li>
+                        <li><a
+                                href="https://discordapp.com/api/oauth2/authorize?client_id=953291673922854932&permissions=2048&scope=bot"><i
+                                    class="fas fa-home"></i>Invite</a></li>
                         <li><a href="#"><i class="fas fa-file-alt"></i>Docs</a></li>
                         <li class="nav-item"><a href="#about"><i class="fas fa-globe"></i>About</a></li>
                     </ul>
@@ -52,36 +61,73 @@
                         Functionality 1| Functionality 2| Functionality 3</h2>
                 </div>
                 <div class="btns">
-                    <button class="btn-invite">Invite</button>
+                    <button class="btn-invite"><a
+                            href="https://discordapp.com/api/oauth2/authorize?client_id=953291673922854932&permissions=2048&scope=bot">Invite</a></button>
                     <button class="btn-docs">Documentation</button>
                 </div>
             </div>
 
         </div>
-        <div id="about" class="main-content-about" data-bs-spy="scroll"
-            class="scrollspy-example main-content-about">
+
+        <div id="about" class="main-content-about" data-bs-spy="scroll" class="scrollspy-example main-content-about">
             <div class="main-content-about_components">
                 <img class="logo-shake" src="assets/peach_logo.png" alt="">
                 <div class="main-content-about_components_info">
-                    <div class="info1"><p style="color: antiquewhite;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique bibendum dolor, sit amet condimentum arcu ultrices vitae. Vestibulum condimentum, mauris vitae tristique scelerisque, ex eros tristique lacus, non luctus nunc massa tristique leo. Maecenas efficitur dui velit, sit amet semper massa bibendum et. Fusce suscipit justo a tellus pellentesque auctor at non augue. Aliquam elementum arcu eu est bibendum feugiat. Sed vulputate nisl eu turpis tincidunt, in dignissim orci dapibus. Mauris venenatis, purus vel molestie scelerisque, magna lorem condimentum turpis, pretium dictum felis ex eget tellus. Fusce nulla velit, faucibus faucibus est a, vulputate tempor dui. Curabitur molestie risus ac sagittis tempus.</p></div>
+                    <div class="info1">
+                        <p style="color: antiquewhite;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                            tristique bibendum dolor, sit amet condimentum arcu ultrices vitae. Vestibulum condimentum,
+                            mauris vitae tristique scelerisque, ex eros tristique lacus, non luctus nunc massa tristique
+                            leo. Maecenas efficitur dui velit, sit amet semper massa bibendum et. Fusce suscipit justo a
+                            tellus pellentesque auctor at non augue. Aliquam elementum arcu eu est bibendum feugiat. Sed
+                            vulputate nisl eu turpis tincidunt, in dignissim orci dapibus. Mauris venenatis, purus vel
+                            molestie scelerisque, magna lorem condimentum turpis, pretium dictum felis ex eget tellus.
+                            Fusce nulla velit, faucibus faucibus est a, vulputate tempor dui. Curabitur molestie risus
+                            ac sagittis tempus.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        </main>
 
-        <!-- Rodapé da pagina -->
-        <footer>
-            <div class="footer-content">
-                <p>Feito com ❤ por <a href="https://github.com/GuilhermeNono">Guilherme Nono</a></p>
+        <div>
+            <div class="main-content-features">
+                <div class="main-content-features_components">
+                    <div class="item1">
+                        <div class="item1-img">
+                            <img src="assets/Security.png" alt="">
+                        </div>
+                        <div class="item1-text">
+                            <h1>Lorem ipsum dolor</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt felis ut
+                                volutpat viverra. Pellentesque lacinia pretium lectus, iaculis pretium risus. Etiam
+                                eleifend, massa ac accumsan tincidunt, ligula purus ultricies felis, in pellentesque est
+                                mi sit amet nulla. Pellentesque ornare et nisl non dictum.</p>
+                        </div>
+                    </div>
+                    <div class="item2">
+                        <div class="item2-text">
+                            <h1>Lorem ipsum dolor</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt felis ut
+                                volutpat viverra. Pellentesque lacinia pretium lectus, iaculis pretium risus. Etiam
+                                eleifend, massa ac accumsan tincidunt, ligula purus ultricies felis, in pellentesque est
+                                mi sit amet nulla. Pellentesque ornare et nisl non dictum.</p>
+
+                        </div>
+                        <div class="item2-img">
+                            <img src="assets/performance.png" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
-        </footer>
+        </div>
+    </div>
+    <!-- Rodapé da pagina -->
+    <footer>
+        <div class="footer-content">
+            <p>Feito com ❤ por <a href="https://github.com/GuilhermeNono">Guilherme Nono</a></p>
+        </div>
+    </footer>
 
-        <script src="src/scripts/preloader.js"></script>
-        <script src="src/scripts/mobileMenu.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
-        </script>
-        <script src="/src/scripts/bootstrap.min.js"></script>
+
 </body>
 
 </html>
