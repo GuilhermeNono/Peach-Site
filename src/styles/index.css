@@ -183,16 +183,19 @@ main {
     background-color: rgb(146, 160, 216);
 }
 
+.content {
+    background-color: rgb(29, 30, 34);
+}
+
 .main-content-about {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 95vh;
     width: 100%;
-    background-color: rgb(29, 30, 34);
 }
 
-.main-content-about_components{
+.main-content-about_components {
     border: 2px solid transparent;
     border-radius: 10px;
     background-color: rgb(38, 39, 44);
@@ -204,8 +207,8 @@ main {
     align-items: center;
 }
 
-.main-content-about_components .logo-shake {  
-    margin-top: 30px;  
+.main-content-about_components .logo-shake {
+    margin-top: 30px;
     margin-bottom: 30px;
     width: auto;
     height: 20vh;
@@ -215,6 +218,7 @@ main {
 .main-content-about_components_info {
     border: 1px solid transparent;
     background: rgb(39, 40, 46);
+    
     border-width: 1px;
     border-radius: 20px;
     display: flex;
@@ -234,7 +238,6 @@ main {
 }
 
 .main-content-features {
-    background-color: rgb(29, 30, 34);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -253,21 +256,8 @@ main {
     margin-bottom: 2%;
 }
 
-.item1 {
-    margin-top: 5%;
-    color: antiquewhite;
-    display: flex;
-    background-color: rgb(42, 43, 49);
-    border-radius: 20px;
-    width: 80%;
-    height: 100%;
-    align-content: center;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.item1-text {
+.item1-text,
+.item2-text {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -276,20 +266,25 @@ main {
     margin: 3% 3%;
 }
 
-.item1-text h1 {
+.item1-text h1,
+.item2-text h1 {
     color: rgb(248, 165, 55);
     margin-bottom: 15px;
+    text-align: center;
 }
 
-.item1-img {
+.item1-img,
+.item2-img {
     animation: shake 3s linear infinite;
     margin: 3% 3%;
 }
 
-.item1-img img{
+.item1-img img,
+.item2-img img {
     height: 30em;
 }
 
+.item1,
 .item2 {
     margin-top: 5%;
     color: antiquewhite;
@@ -305,42 +300,21 @@ main {
     margin-bottom: 5%;
 }
 
-.item2-text {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 1.6rem;
-    margin: 3% 3%;
-}
-
-.item2-text h1 {
-    color: rgb(248, 165, 55);
-    margin-bottom: 15px;
-}
-
-.item2-img {
-    animation: shake 3s linear infinite;
-    margin: 3% 3%;
-}
-
-.item2-img img {
-    height: 30em;
-}
-
 @keyframes shake {
-    0%{
+    0% {
         transform: translateY(-5px);
     }
-    50%{
+
+    50% {
         transform: translateY(5px);
     }
-    100%{
+
+    100% {
         transform: translateY(-5px);
     }
 }
 
-.info{
+.info {
     font-size: 1.6rem;
     margin-left: 35px;
 }
@@ -351,10 +325,11 @@ div.card {
     background: rgb(199, 119, 15);
 }
 
-img.card-img-top{
+img.card-img-top {
     border-radius: 15px;
 }
-p.card-text{
+
+p.card-text {
     font-size: 1.6rem;
     color: antiquewhite;
 }
@@ -387,6 +362,7 @@ footer {
 .footer-content a:hover {
     color: rgb(206, 123, 15);
 }
+
 /* Preloader Page */
 
 .preloader {
@@ -408,6 +384,10 @@ footer {
 .preloader.hidden {
     animation: fadeOut 1s;
     animation-fill-mode: forwards;
+}
+
+.about_text {
+    display: none;
 }
 
 @keyframes fadeOut {
@@ -482,6 +462,11 @@ footer {
 
 /* 768p */
 @media (max-width: 768px) {
+
+    .item1-img,
+    .item2-img {
+        display: none;
+    }
 
     .main-content {
         background: linear-gradient(to top, #ce3e05b7 5%, rgb(29, 30, 34) 95%)
@@ -566,6 +551,22 @@ footer {
         text-align: center;
     }
 
+    .logo-shake.off {
+        display: none;
+    }
+
+    .about_text.on{
+        color: rgb(248, 165, 55);
+        text-align: center;
+        font-size: 4rem;
+        margin-bottom: 45px;
+        display: inherit;
+    }
+
+    .info1 p {
+        font-size: 1.8rem;
+    }
+
     .menu-section.on nav ul {
         display: block;
         text-align: left;
@@ -586,5 +587,16 @@ footer {
     .menu-toggle {
         width: 30px;
         height: 30px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .about_text.on{
+        margin-bottom: 5px;
+    }
+
+    .info1 p {
+        font-size: 1.4rem;
     }
 }
