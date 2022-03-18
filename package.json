@@ -1,0 +1,26 @@
+{
+  "name": "estudopage",
+  "version": "1.0.0",
+  "description": "<p>Site que está sendo utilizado como objeto de estudo. O website contará com a Homepage, serviço de login e outras informações referente ao bot.</p>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev" : "nodemon --exec npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuilhermeNono/Site-for-discord-Bot.git"
+  },
+  "keywords": [],
+  "author": "GuilhermeNono",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GuilhermeNono/Site-for-discord-Bot/issues"
+  },
+  "homepage": "https://github.com/GuilhermeNono/Site-for-discord-Bot#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}

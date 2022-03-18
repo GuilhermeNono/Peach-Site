@@ -110,7 +110,7 @@ main {
     width: 100%;
     padding: 0vh 0vw;
     justify-content: center;
-    background: linear-gradient(to top, #ce3e05b7 5%, rgb(29, 30, 34) 95%), url(../../assets/Daisy.png);
+    background: linear-gradient(to top, #ce3e05b7 5%, rgb(29, 30, 34) 95%), url(../assets/Daisy.png);
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
