@@ -4,8 +4,8 @@
   "description": "<p>Site que está sendo utilizado como objeto de estudo. O website contará com a Homepage, serviço de login e outras informações referente ao bot.</p>",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev" : "nodemon --exec npm start"
+    "start": "node index.js",
+    "dev": "nodemon --exec npm start"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "vercel": "^24.0.0"
   }
 }
