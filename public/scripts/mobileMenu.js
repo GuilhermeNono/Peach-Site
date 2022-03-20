@@ -2,7 +2,7 @@ let showMenu = true;
 let showImage = true;
 
 const menuSection = document.querySelector(".menu-section")
-const menuToggle = menuSection.querySelector(".menu-toggle")
+const menuToggle = document.querySelector(".menu-toggle")
 const logo = document.querySelector(".logo-shake")
 const aboutH1 = document.querySelector(".about_text")
 
