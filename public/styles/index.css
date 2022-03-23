@@ -83,6 +83,17 @@ header {
     padding-right: 8px;
 }
 
+.login-button.off {
+    display: none;
+}
+
+.menu-items-login{
+    display: flex;
+    list-style: none;
+    gap: 100px;
+    justify-content: flex-end;
+}
+
 .menu-items-login a {
     text-decoration: none;
 }
