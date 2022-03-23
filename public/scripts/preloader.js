@@ -1,4 +1,4 @@
-import { userResquest } from "../../src/routes/discordAuthRoutes";
+const { userResquest } = require("../../src/routes/discordAuthRoutes");
 
 window.addEventListener("load", () => {
   const loginButton = document.querySelector(".login-button");
