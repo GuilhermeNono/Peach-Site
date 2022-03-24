@@ -4,7 +4,7 @@
   "description": "<p>Site que está sendo utilizado como objeto de estudo. O website contará com a Homepage, serviço de login e outras informações referente ao bot.</p>",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node src/index.js",
     "dev": "nodemon --exec npm start"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/GuilhermeNono/Site-for-discord-Bot#readme",
   "dependencies": {
+    "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "nodemon": "^2.0.15",
