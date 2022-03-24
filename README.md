@@ -15,5 +15,6 @@
 Está sendo utilizado:
 
 - HTML, CSS E JS
+- Node.js
 
 
