@@ -5,65 +5,85 @@ const router = express.Router();
 const path = require("path");
 require("dotenv").config();
 
-var token = "";
+var codeUser = "";
+var tokenUser = "";
 var userResquest;
 
 router.get("/redirect", async (req, res) => {
-    const { code } = req.query;
+  const { code } = req.query;
+  codeUser = code;
+  const formData = new url.URLSearchParams({
+    client_id: process.env.DISCORD_OAUTH_CLIENT_ID,
+    client_secret: process.env.DISCORD_OAUTH_CLIENT_SECRET,
+    grant_type: "authorization_code",
+    code: code,
+    redirect_uri: process.env.REDIRECT_URI + "/auth/discord/redirect",
+  });
+  if (code) {
+    try {
+      const response = await axios.post(
+        "https://discord.com/api/v8/oauth2/token",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
+      const responseUser = await axios.get(
+        "https://discord.com/api/v8/users/@me",
+        {
+          headers: {
+            Authorization: `Bearer ${response.data.access_token}`,
+          },
+        }
+      );
+      res.cookie("_token", response.data.access_token);
+      res.cookie("_user_data", responseUser.data);
+      tokenUser = response.data.access_token;
+
+      res.redirect("/");
+    } catch (error) {
+      console.error(error);
+      res.sendStatus(400);
+    }
+  }
+});
+
+router.get("/user/logout", async (req, res) => {
+  try {
     const formData = new url.URLSearchParams({
       client_id: process.env.DISCORD_OAUTH_CLIENT_ID,
       client_secret: process.env.DISCORD_OAUTH_CLIENT_SECRET,
-      grant_type: "authorization_code",
-      code: code,
-      redirect_uri: process.env.REDIRECT_URI,
+      token: tokenUser,
     });
-    if (code) {
-      try {
-        const response = await axios.post(
-          "https://discord.com/api/v8/oauth2/token", 
-          formData,
-          {
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded",
-            },
-          }
-        );
-        token = response.data.access_token;
-        res.redirect("/");
-      } catch (error) {
-        console.error(error);
-        res.sendStatus(400);
+    const response = await axios.post(
+      "https://discord.com/api/oauth2/token/revoke",
+      formData,
+      {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
       }
-    }
-  
-    // res.send(200);
-  });
-
-router.get("/user", async (req, res) => {
-      try {
-          const responseUser = await axios.get('https://discord.com/api/v8/users/@me', 
-          {
-            headers: {
-                Authorization: `Bearer ${token}`,
-              },
-          })
-            res.send(responseUser.data)
-            userResquest = responseUser.data
-      } catch (error) {
-          console.log(error)
-            res.sendStatus(400)
-      }
-})
+    );
+    res.clearCookie("_token");
+    res.clearCookie("_user_data");
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(400);
+  }
+});
 
 router.get("/user/avatar", async (req, res) => {
-    try {
-        const {avatar, id} = userResquest;
-        let userAvatar = `https://cdn.discordapp.com/avatars/${id}/${avatar}.png`
-        res.redirect(userAvatar);
-    } catch (error) {
-        console.log(error); 
-        res.sendStatus(400);
-    }
-})
+  try {
+    const { avatar, id } = userResquest;
+    let userAvatar = `https://cdn.discordapp.com/avatars/${id}/${avatar}.png`;
+    res.redirect(userAvatar);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(400);
+  }
+});
 
-module.exports = {router, userResquest};
+module.exports = { router, userResquest };

@@ -87,6 +87,13 @@ header {
     display: none;
 }
 
+.user_avatar {
+    height: auto;
+    border: solid 2px rgb(42, 43, 49);
+    border-radius: 50%;
+    width: 6rem;
+}
+
 .menu-items-login{
     display: flex;
     list-style: none;
@@ -107,6 +114,21 @@ header {
     padding: 5px 25px;
     font-size: 2.5rem;
     font-weight: 300;
+}
+
+.logged{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-direction: row;
+}
+
+.user-info.hidden{
+    display: none;
+}
+
+.login-button.hidden{
+    display: none;
 }
 
 main {

@@ -19,12 +19,8 @@ app.use(routes)
 //TODO encontrar uma forma fazer com que o botão de login desapareça quando o usuário estiver logado
 
 app.get("/", (req, res) => {
-  console.log(userResquest)
-  
   res.sendFile(path.join(__dirname, "/index.html"));
-  
 });
 
 app.listen(PORT);
 console.log(`Server is running at http://localhost:${PORT}`);
-console.log(userResquest)
