@@ -17,7 +17,7 @@ router.get("/redirect", async (req, res) => {
     client_secret: process.env.DISCORD_OAUTH_CLIENT_SECRET,
     grant_type: "authorization_code",
     code: code,
-    redirect_uri: process.env.REDIRECT_URI + "/auth/discord/redirect",
+    redirect_uri: process.env.REDIRECT_URI + "/api/auth/discord/redirect",
   });
   if (code) {
     try {
