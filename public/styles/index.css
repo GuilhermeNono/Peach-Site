@@ -33,6 +33,7 @@ header {
 .menu-content {
     display: flex;
     height: 100%;
+    width: auto;
     justify-content: space-between;
     align-items: center;
     font-size: 1.8rem;
@@ -83,10 +84,6 @@ header {
     padding-right: 8px;
 }
 
-.login-button.off {
-    display: none;
-}
-
 .user_avatar {
     height: auto;
     border: solid 2px rgb(42, 43, 49);
@@ -94,33 +91,31 @@ header {
     width: 6rem;
 }
 
-.menu-items-login{
+ul.menu-items-login {
     display: flex;
+    width: auto;
+    justify-content: center;
+    height: auto;
     list-style: none;
-    gap: 100px;
-    justify-content: flex-end;
+    margin: 0px 0px;
+    padding-left: 0px;
 }
-
 .menu-items-login a {
     text-decoration: none;
+
 }
 
 .menu-items-login button {
     background-color: rgba(248, 148, 17, 1);
     border: none;
+    text-align: center;
     color: rgb(237, 240, 241);
     border-radius: 50px;
+    font-size: 3rem;
+    width: auto;
+    height: auto;
     cursor: pointer;
-    padding: 5px 25px;
-    font-size: 2.5rem;
     font-weight: 300;
-}
-
-.logged{
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    flex-direction: row;
 }
 
 .user-info.hidden{
@@ -471,24 +466,24 @@ footer {
 
     .menu-items-login button {
         font-size: 3rem;
-        width: 15rem;
-        height: 6rem;
+        width: 13rem;
+        height: auto;
     }
 }
 
 /* 1024p */
-@media (max-width: 1024px) {
+@media (max-width: 1160px) {
     .menu-content {
-        padding: 0px 3.6rem;
+        padding: 0px 100px;
     }
 
-    h1.main-text-title {
+    /* h1.main-text-title {
         font-size: 7rem;
     }
 
     h2.main-text-sub {
         font-size: 2rem;
-    }
+    } */
 }
 
 /* TODO: Colocar o maximo e minimo nas paginas e descobrir o por que não está escondendo o menu. */
