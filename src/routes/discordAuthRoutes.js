@@ -2,12 +2,15 @@ const axios = require("axios");
 const url = require("url");
 const express = require("express");
 const router = express.Router();
+const app = express();
 const path = require("path");
+const session = require("express-session");
 require("dotenv").config();
 
 var codeUser = "";
 var tokenUser = "";
 var userResquest;
+
 
 router.get("/redirect", async (req, res) => {
   const { code } = req.query;
@@ -38,10 +41,10 @@ router.get("/redirect", async (req, res) => {
           },
         }
       );
-      res.cookie("_token", response.data.access_token);
-      res.cookie("_user_data", responseUser.data);
-      tokenUser = response.data.access_token;
-
+      req.session.token = response.data.access_token;
+      req.session.user = responseUser.data;
+      // session.userid = response.data.access_token
+      // tokenUser = response.data.access_token;
       res.redirect("/");
     } catch (error) {
       console.error(error);

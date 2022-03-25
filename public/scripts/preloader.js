@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
   const userName = document.querySelector('.user_name')
   const userAvatar = document.querySelector('.user_avatar')
 
-  if(!getCookie("_token")) {
+  if(!sessionStorage.getItem("_token")) {
     const loader = document.querySelector(".preloader");
     loader.className += " hidden";
     loginInfo.className += " hidden";
@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
     loader.className += " hidden";
     loginButton.className += " hidden";
 
-    const userData = getCookie("_user_data");
+    const userData = sessionStorage.getItem("user_data");
     const userDataObj = JSON.parse(userData.substring(2, userData.length));
     let newUserAvatar = `https://cdn.discordapp.com/avatars/${userDataObj.id}/${userDataObj.avatar}.png`;
     let newUserName = userDataObj.username;
