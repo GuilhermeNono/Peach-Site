@@ -2,7 +2,7 @@
 ## 📖 Descrição 
 <p>Site que está sendo utilizado como objeto de estudo. O website contará com a Homepage, serviço de login e outras informações referente ao bot.</p>
 
-<a href="https://peach-site.vercel.app/#" target="_blank">- LIVE DEMO</a>
+<a href="https://twitterclonegn.netlify.app/" target="_blank">- LIVE DEMO</a>
 ##
 
 ### ✪ Objetivos primarios
